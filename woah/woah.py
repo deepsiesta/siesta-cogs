@@ -14,7 +14,11 @@ class Woah:
     async def woah(self):
         """Woah woah woah woah woah!"""
 
-        await self.bot.say(":woah::woah::woah::woah::woah:")
+        await self.bot.say(('<:woah:345685581818232843>'
+                            '<:woah:345685581818232843>'
+                            '<:woah:345685581818232843>'
+                            '<:woah:345685581818232843>'
+                            '<:woah:345685581818232843>'))
 
 
 def setup(bot):
