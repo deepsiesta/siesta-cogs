@@ -8,12 +8,12 @@ class Tex:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def tex(self, ctx, message):
-        """Activate nerd mode"""
+    @commands.command(pass_context=True)
+    async def tex(self, ctx, *, latex):
+        """Renders a provided LaTeX string, e.g. !tex $$e^{i\pi} -1 = 0$$"""
         channel = ctx.message.channel
-        preview(message, viewer='file', filename='output.png')
-        with open('output.png') as f:
+        preview(latex, viewer='file', filename='output.png')
+        with open('output.png','rb') as f:
             await self.bot.send_file(channel,f)
 
 def setup(bot):
