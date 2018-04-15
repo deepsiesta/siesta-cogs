@@ -10,7 +10,7 @@ class Tex:
 
     @commands.command(pass_context=True)
     async def tex(self, ctx, *, latex):
-        """Renders a provided LaTeX string, e.g. !tex $$e^{i\pi} -1 = 0$$"""
+        """Renders a provided LaTeX string, e.g. !tex $$e^{i\pi}+1=0$$"""
         channel = ctx.message.channel
         preview(latex, viewer='file', filename='output.png')
         with open('output.png','rb') as f:
